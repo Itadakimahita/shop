@@ -10,7 +10,7 @@ from flask_login import LoginManager
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.config['SECRET_KEY']='27hkmgBJvmvQdIC1poA2W3Cr99n_2zpmNqhKTn7tuds4TWCck'
+app.config['SECRET_KEY']= os.getenv("SECRET_KEY")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.config['UPLOADED_PHOTOS_DEST'] = os.path.join(basedir, 'static/images')
